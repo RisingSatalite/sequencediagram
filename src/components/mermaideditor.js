@@ -22,7 +22,7 @@ export default function Editor() {
   const [items, setItems] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
-  const arrowTypes = ["->>", "-->>", "--x", "-x", "->", "-->"];
+  const arrowTypes = ["->>", "-->>", "--x", "-x", "->", "-->", "-)", "--)"];
   const [selectedArrow, setSelectedArrow] = useState('->>');
   
   const [selectedItem, setSelectedItem] = useState(null);
