@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
     "fs": "^0.0.1-security",
     "mermaid": "^10.9.1",
     "next": "14.2.4",

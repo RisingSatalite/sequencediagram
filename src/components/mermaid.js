@@ -16,7 +16,7 @@ const Mermaid = ({ chart }) => {
     mermaid.initialize({ startOnLoad: true });
   }, []);
 
-  return <div className="mermaid" ref={chartRef}>{chart}</div>;
+  return <div className="mermaid-diagram" ref={chartRef}>{chart}</div>;
 };
 
 export default Mermaid;
