@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import CollapsibleSpan from './collapsiblespan';
 
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 //const fs = require('fs');
 
 const Mermaid = dynamic(() => import('@/components/mermaid'), { ssr: false });
