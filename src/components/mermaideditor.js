@@ -11,6 +11,7 @@ import { saveAs } from 'file-saver';
 const Mermaid = dynamic(() => import('@/components/mermaid'), { ssr: false });
 
 export default function Editor() {
+  const [name, setName] = useState('MermaidNotes')
   const [mermaidChart, setMermaidChart] = useState(`sequenceDiagram
     Alice ->> Bob: Hello Bob, how are you?
     Bob-->>John: How about you John?
@@ -128,7 +129,7 @@ export default function Editor() {
     for (let arrows of arrowList) {
       text += arrows[0] + "," + arrows[3] + "," + arrows[1] + "," + arrows[2] + '\n';
     }
-    downloadFile('sequencediagram.csv', text);
+    downloadFile(name+'.csv', text);
   };
 
   const handleFileUpload = (event) => {
@@ -174,13 +175,19 @@ export default function Editor() {
     domtoimage.toBlob(document.getElementById("mermaid-diagram"))
     .then(function (blob) {
         var FileSaver = require('file-saver');
-        FileSaver.saveAs(blob, 'sequencediagram.png');
+        FileSaver.saveAs(blob, name+'.png');
     });
   }
   
   return (
     <main>
       <div>
+        <input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          placeholder="Name your drawing name"
+        />
         <button onClick={handleExport}>Export Data</button>
         <input
           type="file"
