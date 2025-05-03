@@ -11,7 +11,7 @@ import { saveAs } from 'file-saver';
 const Mermaid = dynamic(() => import('@/components/mermaid'), { ssr: false });
 
 export default function Editor() {
-  const [name, setName] = useState('MermaidNotes')
+  const [name, setName] = useState('SequenceDiagram')
   const [mermaidChart, setMermaidChart] = useState(`sequenceDiagram
     Alice ->> Bob: Hello Bob, how are you?
     Bob-->>John: How about you John?
